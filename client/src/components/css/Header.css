@@ -1,0 +1,145 @@
+/* src/components/css/Header.css */
+
+/* ─── 기본 슬라이더 (PC 전체화면) ─── */
+.slider {
+   position: relative;
+   width: 100%;
+   height: 100vh; /* PC에서는 화면 꽉 채우기 */
+   overflow: hidden;
+}
+
+/* ─── 슬라이드 래퍼 ─── */
+.slides {
+   display: flex;
+   width: 100%;
+   height: 100%;
+   transition: transform 0.5s ease-in-out;
+}
+
+/* ─── 개별 슬라이드 ─── */
+.slide {
+   flex: 0 0 100%;
+   height: 100%;
+   background-size: cover;
+   background-position: center;
+}
+
+/* ─── 페이징 도트 ─── */
+.pagination {
+   position: absolute;
+   bottom: 20px;
+   left: 50%;
+   transform: translateX(-50%);
+   display: flex;
+   gap: 10px;
+   z-index: 20;
+}
+.dot {
+   width: 12px;
+   height: 12px;
+   border-radius: 50%;
+   border: none;
+   background-color: rgba(136, 136, 136, 0.5);
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+.dot.active {
+   background-color: #363636;
+}
+
+/* ─── 오버레이(.overlay) ─── */
+.overlay {
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 10;
+   width: 100%;
+   height: 100%;
+   pointer-events: none;
+}
+
+/* ─── 중앙 텍스트 ─── */
+.center-text {
+   position: absolute;
+   /* 기본: 화면 중앙 배치 */
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 90%;
+   text-align: center;
+   padding: 1rem;
+   margin-top: 20px;
+   display: none;
+}
+.center-text h1 {
+   font-size: 2rem;
+   margin-bottom: 0.5rem;
+}
+.center-text p {
+   font-size: 1rem;
+   margin-bottom: 1rem;
+}
+
+/* ─── PC 전용 (≥1024px) ─── */
+@media screen and (min-width: 1024px) {
+   .center-text {
+      /* 좌측 여유 두고 상단 30% 지점에서 */
+      top: 25%;
+      left: 5%;
+      transform: translate(0, -50%);
+      width: 600px;
+      padding: 2rem;
+      display: block;
+      text-align: left;
+   }
+   .center-text h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+   }
+   .center-text p {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+   }
+}
+
+/* ─── 태블릿 전용 (768px–1023px) ─── */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+   /* 화면비율 유지 */
+   .slider {
+      height: auto;
+      aspect-ratio: 16 / 9;
+   }
+   .center-text {
+      /* 조금 아래로 내려서 중앙 감 */
+      top: 27%;
+      /* 기본 translate(-50%,-50%) 유지 */
+      display: block;
+      text-align: left;
+   }
+   .center-text h1 {
+      font-size: 2rem;
+   }
+   .center-text p {
+      font-size: 1.1rem;
+   }
+}
+
+/* ─── 모바일 전용 (≤767px) ─── */
+@media screen and (max-width: 767px) {
+   /* 화면비율 유지 */
+   .slider {
+      height: auto;
+      aspect-ratio: 16 / 9;
+   }
+   .center-text {
+      /* 텍스트 박스 약간 좁히고 더 아래로 */
+      top: 40%;
+      width: 80%;
+   }
+   .center-text h1 {
+      font-size: 1.6rem;
+   }
+   .center-text p {
+      font-size: 0.9rem;
+   }
+}

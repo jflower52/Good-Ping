@@ -1,0 +1,180 @@
+/* ───────────────────────────────────────────
+   App.css — 전체 코드
+──────────────────────────────────────────── */
+
+/* 기본 리셋 */
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+body,
+html {
+   height: 100%;
+}
+
+/* 네비바 고정 높이만큼 본문 최상단 여백 추가 기본 제거 */
+#main {
+   padding-top: 0;
+}
+
+/* 스크롤 후에만 padding-top 적용 */
+/* body.nav-solid #main {
+  padding-top: 64px;
+} */
+
+#contents {
+   padding-top: 5vh;
+}
+
+/* view-all 버튼 */
+.view-all {
+   display: flex;
+   justify-content: center;
+   margin-bottom: 10vh;
+}
+
+.view-all button {
+   border: 1px solid #ccc;
+   padding: 8px 16px;
+   font-size: 14px;
+   background: white;
+   border-radius: 6px;
+   cursor: pointer;
+}
+
+.view-all button:hover {
+   background-color: #f3f4f6;
+}
+
+/* 공통 레이아웃 너비 설정 */
+
+.hero-banner,
+.features {
+   max-width: 1400px;
+   margin: 0 auto; /* 가운데 정렬 */
+   padding: 0 16px;
+}
+
+/* ───────────────────────────────────────────
+   1. Hero Banner: 변수로 여백 지정
+──────────────────────────────────────────── */
+.hero-banner {
+   /* 기본 여백 값 (원하는 값으로 쉽게 조절 가능) */
+   --hb-padding-vertical: 40px;
+   --hb-padding-horizontal: 20px;
+   --hb-margin-top: 80px;
+   --hb-margin-bottom: 20px;
+
+   background-color: rgb(240, 240, 240);
+   padding: var(--hb-padding-vertical) var(--hb-padding-horizontal);
+   margin: var(--hb-margin-top) auto var(--hb-margin-bottom);
+   text-align: center;
+   border-radius: 16px;
+   box-shadow: 0 4px 10px rgba(212, 212, 212, 0.3);
+}
+
+.hero-banner > div {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.hero-banner h2 {
+   font-size: 2rem;
+   margin-bottom: 0.5em;
+}
+
+.hero-banner img {
+   height: 80px;
+}
+
+.hero-banner p {
+   font-size: 1rem;
+   color: #363636;
+}
+
+/* ───────────────────────────────────────────
+   2. Features: 변수로 간격 지정
+──────────────────────────────────────────── */
+.features {
+   /* 기본 간격 값 (원하는 값으로 쉽게 조절 가능) */
+   --ft-gap: 16px;
+   --ft-margin-bottom: 80px;
+
+   display: flex;
+   justify-content: space-between;
+   gap: var(--ft-gap);
+   margin: 0 auto var(--ft-margin-bottom);
+}
+
+.feature-card {
+   flex: 1;
+   background: #ffffff;
+   padding: 20px;
+   border-radius: 12px;
+   font-size: 1rem;
+   text-align: center;
+   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+   transition: all 0.3s ease;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 5px;
+}
+
+.feature-card img {
+   height: 50px;
+}
+
+.feature-card:hover {
+   background-color: rgb(240, 240, 240);
+   transform: translateY(-3px);
+}
+
+/* ───────────────────────────────────────────
+   3. Mobile Responsive (≤768px)
+──────────────────────────────────────────── */
+@media screen and (max-width: 768px) {
+   .hero-banner {
+      /* 모바일 전용 변수 값 */
+      --hb-padding-vertical: 30px;
+      --hb-padding-horizontal: 16px;
+      --hb-margin-top: 60px;
+      --hb-margin-bottom: 16px;
+      padding: var(--hb-padding-vertical) var(--hb-padding-horizontal);
+      margin: var(--hb-margin-top) auto var(--hb-margin-bottom);
+   }
+
+   .hero-banner h2 {
+      font-size: 1.2rem;
+   }
+
+   .hero-banner img {
+      height: 60px;
+   }
+
+   .hero-banner p {
+      font-size: 0.9rem;
+   }
+
+   .features {
+      flex-direction: column;
+      /* 모바일 전용 간격 줄이기 */
+      --ft-gap: 12px;
+      --ft-margin-bottom: 60px;
+      gap: var(--ft-gap);
+      margin-bottom: var(--ft-margin-bottom);
+   }
+}
+
+/* ───────────────────────────────────────────
+   데스크탑 전용 폰트·버튼 사이징
+──────────────────────────────────────────── */
+@media screen and (min-width: 769px) {
+   .view-all button {
+      font-size: 16px;
+      padding: 10px 20px;
+   }
+}

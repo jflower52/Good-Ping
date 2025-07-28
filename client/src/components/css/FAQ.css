@@ -1,0 +1,97 @@
+/* ✅ 기본 모바일 스타일 (기준) */
+.faq-section {
+   width: 100%;
+   max-width: 100%;
+   padding: 1.5rem 1rem;
+   margin: 0 auto 40px;
+}
+
+.faq-title {
+   font-size: 30px;
+   text-align: center;
+   margin-bottom: 1rem;
+   font-weight: 600;
+}
+
+.faq-list {
+   display: flex;
+   flex-direction: column;
+   gap: 0.75rem;
+}
+
+.faq-item {
+   border-bottom: 1px solid #ddd;
+   padding-bottom: 0.5rem;
+   overflow: hidden;
+   transition: all 0.3s ease;
+}
+
+.faq-question {
+   font-weight: bold;
+   font-size: 18px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   cursor: pointer;
+   padding: 0.5rem 0;
+   transition: color 0.3s ease;
+}
+
+.faq-item.open .faq-question {
+   color: #0078ff;
+}
+
+.arrow {
+   font-size: 16px;
+   margin-left: 8px;
+}
+
+.faq-answer-wrapper {
+   max-height: 0;
+   opacity: 0;
+   overflow: hidden;
+   transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.faq-item.open .faq-answer-wrapper {
+   max-height: 200px;
+   opacity: 1;
+}
+
+.faq-answer {
+   margin-top: 0.5rem;
+   color: #555;
+   line-height: 1.6;
+   font-size: 15px;
+}
+
+/* ✅ PC 반응형 스타일 */
+@media screen and (min-width: 768px) {
+   .faq-section {
+      max-width: 1160px;
+      padding: 2rem 1rem;
+      margin-bottom: 60px;
+   }
+
+   .faq-title {
+      font-size: 40px;
+      margin-bottom: 1.5rem;
+   }
+
+   .faq-list {
+      gap: 1rem;
+   }
+
+   .faq-question {
+      font-size: 25px;
+   }
+
+   .arrow {
+      font-size: 18px;
+      margin-left: 10px;
+   }
+
+   .faq-answer {
+      font-size: 17px;
+   }
+}

@@ -1,0 +1,114 @@
+.mypage-container {
+   height: 100vh;
+   padding-top: var(--navHeight);
+   width: 100%;
+   max-width: 1200px;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   margin: 0 auto;
+   overflow: auto;
+}
+
+.mypage-btnDiv {
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 20px;
+   align-items: end;
+}
+
+.saveBtn {
+   padding: 5px 15px;
+   font-size: 16px;
+   color: white;
+   background-color: green;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+}
+.saveBtn:hover {
+   background-color: #004e00;
+}
+
+.buyTable {
+   margin-bottom: 20px;
+}
+
+.mypage-form {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+   margin-bottom: 3rem;
+}
+
+.mypage-form input {
+   padding: 0.8rem 1rem;
+   border: 1px solid #ddd;
+   border-radius: 8px;
+   font-size: 1rem;
+   transition: border-color 0.2s;
+}
+
+.mypage-form input:focus {
+   border-color: #4a90e2;
+   outline: none;
+}
+
+.mypage-table {
+   width: 100%;
+   border-collapse: collapse;
+   text-align: center;
+}
+
+/* 테이블 전체 wrapper 스타일 */
+.mypage-table-wrapper {
+   max-height: 300px;
+   overflow-y: auto;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+}
+
+/* 여기에 sticky 속성 추가 */
+.mypage-table thead th {
+   position: sticky;
+   top: 0;
+   background-color: green; /* 기존 배경 유지 */
+   color: white;
+   font-weight: 600;
+   padding: 10px;
+   border-bottom: 1px solid #ddd;
+   text-align: left;
+   z-index: 2;
+}
+
+.mypage-table th,
+.mypage-table td {
+   padding: 1rem;
+   border: 1px solid #e0e0e0;
+   text-align: left;
+}
+
+.mypage-table td {
+   background-color: #fafafa;
+}
+
+.mypage-table td:first-child {
+   text-align: left;
+}
+
+@media screen and (max-width: 767px) {
+   .mypage-container {
+      padding: 1rem;
+      height: 100vh;
+   }
+
+   .mypage-form input {
+      font-size: 0.9rem;
+   }
+
+   .mypage-table th,
+   .mypage-table td {
+      font-size: 0.9rem;
+      padding: 0.6rem;
+   }
+}

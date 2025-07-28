@@ -1,0 +1,154 @@
+.navbar {
+   position: fixed;
+   top: 0;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 1rem;
+
+   transition: background-color 0.3s ease, border-bottom 0.3s ease,
+      box-shadow 0.3s ease;
+   z-index: 1000;
+
+   /* 투명 상태: 배경 없음 + 하단 실선 */
+   background-color: transparent;
+   box-shadow: none;
+}
+
+.navbar.solid {
+   /* 스크롤 후: 흰 배경 + 그림자 */
+   background-color: #fff;
+   border-bottom: none;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar__logo img {
+   height: 40px;
+}
+
+.navbar__actions {
+   display: flex;
+   align-items: center;
+   gap: 7px;
+}
+
+.alarm-btn,
+.login-btn {
+   display: inline-flex;
+   align-items: center;
+   justify-content: flex-end; /* 텍스트와 아이콘 우측 정렬 */
+   border: none;
+   cursor: pointer;
+   font-weight: bold;
+   background-color: transparent;
+   white-space: nowrap;
+   width: fit-content;
+}
+
+.alarm-btn p {
+   display: block;
+}
+
+.alarm-btn p,
+.login-btn p {
+   margin: 0 0 0 0.5rem;
+   font-size: 0.9rem;
+}
+
+.alarm-btn p {
+   display: none;
+}
+
+.alarmIcon,
+.loginIcon {
+   width: 25px;
+   height: 25px;
+   object-fit: contain;
+   flex-shrink: 0;
+}
+
+.user-name {
+   margin-left: 1rem;
+   font-weight: 500;
+   cursor: pointer;
+}
+
+.user-dropdown {
+   position: relative;
+   display: flex;
+   align-items: center;
+}
+
+.user-dropdown-toggle {
+   display: flex;
+   align-items: center;
+   background: transparent;
+   border: none;
+   font-weight: bold;
+   cursor: pointer;
+   font-size: 1rem;
+}
+
+.user-dropdown-toggle span {
+   margin-left: 0.4rem;
+}
+
+.dropdown-arrow {
+   margin-left: 0.3rem;
+   margin-top: 0.3rem;
+   font-size: 0.8rem;
+}
+
+.user-dropdown-menu {
+   position: absolute;
+   top: 120%;
+   right: 0;
+   background: white;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+   border-radius: 6px;
+   overflow: hidden;
+   z-index: 1000;
+   min-width: 120px;
+}
+
+.user-dropdown-menu div {
+   padding: 0.7rem 1rem;
+   cursor: pointer;
+   white-space: nowrap;
+   transition: background 0.2s;
+}
+
+.user-dropdown-menu div:hover {
+   background-color: #f2f2f2;
+}
+
+@media screen and (min-width: 768px) {
+   .alarm-btn p {
+      display: block;
+   }
+}
+
+@media screen and (min-width: 1024px) {
+   .navbar {
+      padding: 1rem 3rem;
+   }
+   .navbar__actions {
+      flex-direction: row;
+      justify-content: center;
+      gap: 20px;
+   }
+   .navbar__logo img {
+      height: 55px;
+   }
+   .alarm-btn p,
+   .login-btn p {
+      font-size: 1rem;
+   }
+
+   .alarmIcon,
+   .loginIcon {
+      width: 28px;
+      height: 28px;
+   }
+}

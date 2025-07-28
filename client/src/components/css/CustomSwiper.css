@@ -1,0 +1,28 @@
+/* CustomSwiper 전용 스타일 (필요시만 추가) */
+
+/* 페이지네이션 위치 조정 (필요하면) */
+.popular-swiper {
+   width: 100%;
+   min-height: 160px;
+   padding-bottom: 10px;
+   overflow: visible;
+}
+
+.swiper-pagination {
+   position: relative !important;
+   z-index: 10;
+   text-align: center;
+}
+
+.swiper-pagination-bullet {
+   width: 8px;
+   height: 8px;
+   background: #888;
+   opacity: 0.5;
+   border-radius: 50%;
+}
+
+.swiper-pagination-bullet-active {
+   background: #111;
+   opacity: 1;
+}

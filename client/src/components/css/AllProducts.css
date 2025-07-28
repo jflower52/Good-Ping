@@ -1,0 +1,120 @@
+/* src/components/css/AllProducts.css */
+
+/* ─────────── 공통 스타일 ─────────── */
+.all-products-section {
+   max-width: 1400px;
+   margin: 0 auto;
+   padding: 16px;
+   margin-top: 10vh;
+   box-sizing: border-box;
+   background: #fff;
+}
+
+.all-products-title {
+   font-size: 30px;
+   font-weight: bold;
+   text-align: center;
+   margin-bottom: 30px;
+}
+
+.all-products-search {
+   display: flex;
+   justify-content: center;
+   margin-bottom: 30px;
+}
+.all-products-search input {
+   width: 100%;
+   padding: 10px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   font-size: 18px;
+}
+@media (max-width: 767px) {
+   .all-products-search input {
+      max-width: 280px;
+   }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+   .all-products-search input {
+      max-width: 340px;
+   }
+}
+@media (min-width: 1024px) {
+   .all-products-search input {
+      max-width: 400px;
+   }
+}
+
+/* ─────────── 그리드 (Desktop 전용) ─────────── */
+.all-products-grid {
+   display: none;
+}
+@media (min-width: 1024px) {
+   .all-products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+   }
+   .all-products-title {
+      font-size: 40px;
+   }
+}
+
+/* ─────────── Swiper 컨테이너 ─────────── */
+.all-products-swiper {
+   width: 100%;
+   padding-bottom: 20px;
+   box-sizing: border-box;
+   overflow: hidden; /* 가로 스크롤 숨기기 */
+}
+
+.all-products-swiper .swiper-wrapper {
+   -ms-overflow-style: none; /* IE, Edge */
+   scrollbar-width: none; /* Firefox */
+}
+.all-products-swiper .swiper-wrapper::-webkit-scrollbar {
+   display: none; /* Chrome, Safari, Opera */
+}
+
+.all-products-swiper .swiper-slide {
+   padding: 0; /* spaceBetween으로 간격 조절 */
+}
+
+/* ─────────── 페이지네이션 ─────────── */
+.all-products-pagination {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 2rem 0;
+   gap: 0.5rem;
+}
+.all-products-pagination button {
+   padding: 0.5rem 0.75rem;
+   border: 1px solid #ccc;
+   background: white;
+   cursor: pointer;
+   border-radius: 4px;
+}
+.all-products-pagination button:disabled {
+   opacity: 0.5;
+   cursor: not-allowed;
+}
+.all-products-pagination button.active {
+   background: #0078ff;
+   color: white;
+   border-color: #0078ff;
+}
+
+/* ─────────── Tablet 레이아웃 ─────────── */
+@media (min-width: 768px) and (max-width: 1023px) {
+   .all-products-swiper {
+      min-height: 180px;
+   }
+}
+
+/* ─────────── PC 레이아웃 ─────────── */
+@media (min-width: 1024px) {
+   .all-products-swiper {
+      display: none;
+   }
+}

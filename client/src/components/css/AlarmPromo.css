@@ -1,0 +1,88 @@
+/* 공통 스타일 */
+.alarm-promo {
+   width: 100%;
+   min-height: 400px;
+   background: url("../../assets/alarm_bg.jpg") no-repeat center center;
+   background-size: cover;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 40px 20px;
+}
+
+.alarm-promo-overlay {
+   background-color: rgba(0, 0, 0, 0.5);
+   color: white;
+   text-align: center;
+   border-radius: 16px;
+   padding: 30px 20px;
+   max-width: 90%;
+   width: 100%;
+}
+
+.promo-text {
+   margin-bottom: 40px;
+   font-size: 1.3rem;
+   font-weight: bold;
+}
+
+.promo-btn {
+   padding: 12px 24px;
+   border: none;
+   background-color: green;
+   color: white;
+   border-radius: 10px;
+   font-size: 1.1rem;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+
+.promo-btn:hover {
+   background-color: #004e00;
+}
+
+/* 📱 모바일 대응 (최대 600px) */
+@media (max-width: 600px) {
+   .alarm-promo {
+      min-height: 300px;
+   }
+
+   .promo-text {
+      font-size: 1rem;
+   }
+
+   .promo-btn {
+      font-size: 1rem;
+      padding: 10px 20px;
+   }
+}
+
+/* 📱 태블릿 대응 (601px ~ 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+   .alarm-promo {
+      min-height: 350px;
+   }
+
+   .promo-text {
+      font-size: 1.1rem;
+   }
+
+   .promo-btn {
+      font-size: 1.05rem;
+   }
+}
+
+/* 💻 PC 대응 (1025px 이상) */
+@media (min-width: 1025px) {
+   .alarm-promo-overlay {
+      max-width: 600px;
+   }
+
+   .promo-text {
+      font-size: 1.3rem;
+   }
+
+   .promo-btn {
+      font-size: 1.1rem;
+   }
+}
